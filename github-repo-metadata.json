@@ -1,0 +1,53 @@
+{
+  "repository_name": "09-club-rivalry-history-engine",
+  "description": "Football head-to-head and club rivalry history engine for derby results, team vs team stats and soccer H2H analytics.",
+  "topics": [
+    "football-head-to-head",
+    "soccer-h2h",
+    "club-rivalry",
+    "derby-history",
+    "team-vs-team",
+    "football-history",
+    "h2h-stats",
+    "football-data",
+    "sports-analytics",
+    "python",
+    "pytest",
+    "openfootball",
+    "football-data-org",
+    "seo-ready",
+    "github-search"
+  ],
+  "visibility": "public",
+  "homepage": "",
+  "default_branch": "main",
+  "about_section": {
+    "description": "Football head-to-head and club rivalry history engine for derby results, team vs team stats and soccer H2H analytics.",
+    "topics": [
+      "football-head-to-head",
+      "soccer-h2h",
+      "club-rivalry",
+      "derby-history",
+      "team-vs-team",
+      "football-history",
+      "h2h-stats",
+      "football-data",
+      "sports-analytics",
+      "python",
+      "pytest",
+      "openfootball",
+      "football-data-org",
+      "seo-ready",
+      "github-search"
+    ],
+    "website": "Set after Resource Portals domain is confirmed"
+  },
+  "github_search_intent": [
+    "repository name",
+    "description",
+    "topics",
+    "README first screen",
+    "docs titles",
+    "examples and tests"
+  ]
+}
