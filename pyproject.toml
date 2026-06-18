@@ -1,0 +1,9 @@
+﻿[project]
+name = "09-club-rivalry-history-engine"
+version = "0.1.0"
+description = "缁撳悎鐞冮槦鍘嗗彶璧涙灉涓?head-to-head 缁撴瀯锛岀敓鎴愬己 SEO 鐨勫痉姣斻€佸鏁屽拰浜ら攱鍘嗗彶椤甸潰銆?
+requires-python = ">=3.10"
+
+[tool.pytest.ini_options]
+pythonpath = ["."]
+
