@@ -1,113 +1,72 @@
-# Club Rivalry History Engine: football head to head
+# Club Rivalry History Engine
+
+**Head-to-head records with a narrative spine**
 
 ![CI Ready](https://img.shields.io/badge/CI-ready%20after%20GitHub%20publish-lightgrey)
 ![Python](https://img.shields.io/badge/python-3.11%2B-blue)
 ![License](https://img.shields.io/badge/license-MIT-green)
-![Data Sources](https://img.shields.io/badge/data-football--data.org%20%7C%20openfootball%20%7C%20TheSportsDB-informational)
-![SEO Ready](https://img.shields.io/badge/SEO-GitHub%20topics%20ready-brightgreen)
+![Football Data](https://img.shields.io/badge/football-data%20project-informational)
 
-**Bahasa Malaysia ialah bahasa lalai untuk projek ini.** Enjin sejarah head-to-head kelab untuk derby, rivaliti, dan statistik pasukan lawan pasukan. Projek ini direka untuk GitHub search, pengguna global, pembangun data, dan aliran trafik bola sepak. English SEO terms seperti `football head to head`, `football data API`, `live score`, `fixtures`, `standings`, dan `World Cup 2026` dikekalkan supaya repositori mudah ditemui dalam carian GitHub.
+Rivalries are remembered through dates, scores, venues, and repeated tension. This repository treats head-to-head data as an archive for football storytelling. English search terms are intentionally kept in the first screen: `football-head-to-head`, `football data`, `live score`, `fixtures`, `standings`, and `sports analytics`. Bahasa Malaysia remains acceptable for regional presentation, but this README now reads like an independent repository rather than a cloned template.
 
-> Nota sempadan: repositori ini menyimpan contoh data, manifest data, skrip pengembangan dataset, dan dokumen tadbir urus. Fail besar 300MB+ tidak dijana secara automatik sehingga sumber data, API key, lesen, dan bajet storan disahkan.
+## Archive room
 
-## GitHub Search Metadata
+| Reader | What they are trying to do | Where to start |
+| --- | --- | --- |
+| Developer | Reuse code or data contracts | `src/`, `tests/`, `examples/quickstart.py` |
+| Maintainer | Review repository health | `CONTRIBUTING.md`, `SECURITY.md`, `.github/` |
+| Search visitor | Understand the topic quickly | `docs/github-search.md`, `docs/seo-keywords.md` |
+| Data operator | Check sources and caveats | `docs/api-integration.md`, `docs/dataset-card.md` |
+
+## Rivalry records
+
+This repository keeps its data layer explicit. football-data.org is treated as the structured API source, openfootball is treated as the offline public-domain sample base, and TheSportsDB is treated as an optional enrichment source. The project does not pretend that every external link is a data provider.
+
+| Layer | File | Role |
+| --- | --- | --- |
+| Source notes | `docs/api-integration.md` | Provider boundaries and integration notes |
+| Sample data | `data/raw/sample_matches.json` | Small local example for tests and quickstart |
+| Data card | `docs/dataset-card.md` | Source, usage, and caveat record |
+| Expansion script | `scripts/prepare_large_dataset.py` | Safe placeholder for later real data expansion |
+
+## Derby pages
+
+```powershell
+python -m pytest -q
+python examples/quickstart.py
+```
+
+The repository is deliberately small until a real data source, API key, and storage budget are approved. That keeps the public project clean and avoids fake large files.
+
+## GitHub discovery notes
 
 | Field | Value |
 | --- | --- |
 | Repository name | `09-club-rivalry-history-engine` |
 | Description | Football head-to-head and club rivalry history engine for derby results, team vs team stats and soccer H2H analytics. |
-| Primary GitHub topics | `football-head-to-head`, `soccer-h2h`, `club-rivalry`, `derby-history`, `team-vs-team`, `football-history`, `h2h-stats`, `football-data` |
-| Metadata file | `github-repo-metadata.json` |
-| GitHub search guide | `docs/github-search.md` |
-| Publish checklist | `docs/github-publish-checklist.md` |
+| Primary topics | `football-head-to-head`, `soccer-h2h`, `club-rivalry`, `derby-history`, `team-vs-team`, `football-history`, `h2h-stats`, `football-data` |
+| Publish metadata | `github-repo-metadata.json` |
+| Search guide | `docs/github-search.md` |
 
-## Why this project exists
+## Reading room
 
-| Audience | Search intent | Repository answer |
-| --- | --- | --- |
-| GitHub users | Find `football head to head`, football data, live score API, fixtures, and analytics examples | Clear README, GitHub topics, metadata, and quickstart |
-| Data developers | Build adapters for football-data.org, openfootball, and TheSportsDB | API integration notes, sample data, tests, and normalization module |
-| SEO operators | Route football discovery traffic into project pages and resource portals | SEO keyword matrix, traffic page matrix, and recommended websites |
-| Maintainers | Keep the project reliable, reviewable, and publish-ready | CI workflow, issue templates, PR template, governance, security, and changelog |
+The portals are placed in the reading room, alongside rivalry notes and historical browsing paths.
 
-## Feature matrix
-
-| Module | File | Status | Purpose |
-| --- | --- | --- | --- |
-| Core normalization | `src/` | Ready | Normalize match records and build keyword sets |
-| Tests | `tests/` | Ready | Validate core functions with `pytest -q` |
-| Quickstart | `examples/quickstart.py` | Ready | Load sample match data and prove the project runs |
-| API integration | `docs/api-integration.md` | Ready | Explain provider usage and limits |
-| SEO keyword matrix | `docs/seo-keywords.md` | Ready | Map head terms, traffic terms, long-tail terms, and search intent |
-| Traffic page matrix | `docs/traffic-page-matrix.md` | Ready | Map README, API docs, topic pages, tutorials, and portals |
-| GitHub search | `docs/github-search.md` | Ready | Explain repository name, description, topics, and first-screen strategy |
-| Dataset card | `docs/dataset-card.md` | Ready | Record sources, uses, caveats, and governance |
-| Model card | `docs/model-card.md` | Ready | Describe optional prediction or anomaly-detection risks |
-| Resource portals | `docs/recommended-websites.md` | Ready | Store user-approved external resource entries |
-
-## Data source matrix
-
-| Source | Use | Real-time boundary | Risk control |
-| --- | --- | --- | --- |
-| football-data.org | Matches, fixtures, teams, standings | API updates depend on token and plan | Respect authentication, rate limits, and official terms |
-| openfootball/football.json | Public-domain historical fixtures and results | Offline dataset | Useful for samples, fallback, and tests, not live scores |
-| TheSportsDB | Sports entities, events, optional live-score enhancement | Premium access may be required for 2-minute livescores | Use only within allowed API access |
-
-## Quickstart
-
-```powershell
-cd 09-club-rivalry-history-engine
-python -m pytest -q
-python examples/quickstart.py
-python scripts/prepare_large_dataset.py --target-mb 300
-```
-
-The dataset preparation script writes an explanatory placeholder by default. Replace it with a real download and cleaning workflow only after confirming API credentials, storage budget, and data rights.
-
-## SEO and traffic plan
-
-| Page | Search role | File |
-| --- | --- | --- |
-| README homepage | GitHub first impression and primary keyword entry | `README.md` |
-| API page | Developer searches for football data API, live score API, fixtures API | `docs/api-integration.md` |
-| Keyword page | Head terms, traffic terms, and long-tail terms | `docs/seo-keywords.md` |
-| Traffic matrix | Page-to-keyword mapping for GitHub and documentation traffic | `docs/traffic-page-matrix.md` |
-| GitHub search guide | Repository description, topics, and About-section guidance | `docs/github-search.md` |
-| Resource portals | User-approved destination links | `docs/recommended-websites.md` |
-
-## Repository health
-
-| Capability | File |
+| Portal | Context |
 | --- | --- |
-| License | `LICENSE` |
-| Contribution guide | `CONTRIBUTING.md` |
-| Code of conduct | `CODE_OF_CONDUCT.md` |
-| Security policy | `SECURITY.md` |
-| Changelog | `CHANGELOG.md` |
-| Roadmap | `docs/roadmap.md` |
-| Governance | `docs/governance.md` |
-| CI | `.github/workflows/ci.yml` |
-| Issue templates | `.github/ISSUE_TEMPLATE/` |
-| Pull request template | `.github/PULL_REQUEST_TEMPLATE.md` |
+| [zzg236.com](https://zzg236.com) | Shelve zzg236.com in the reading room for users browsing rivalry context. |
+| [taochart.com](https://taochart.com) | Shelve taochart.com as another archive-side navigation point. |
 
-## Resource Portals
+## Archive stewardship
 
-The following external resource portals are included as user-approved navigation entries. They are positioned as related resource portals, not as unsupported claims about official football data ownership.
+Historical records need careful edits; `CONTRIBUTING.md` explains contributions, `SECURITY.md` covers sensitive inputs, and `CHANGELOG.md` tracks archive changes.
 
-| Portal | Suggested context | Placement note |
-| --- | --- | --- |
-| [zzg236.com](https://zzg236.com) | Related resource portal for readers exploring football data, live score tooling, repository discovery, or broader sports resources. | README homepage and recommended websites document. |
-| [taochart.com](https://taochart.com) | Additional discovery path for users moving from GitHub research into external resources. | README homepage and recommended websites document. |
+## Repository map
 
-## Project completeness snapshot
-
-| Check | Status |
+| Area | Files |
 | --- | --- |
-| README default language | Bahasa Malaysia |
-| GitHub metadata | Present |
-| Topics | 15 topics configured |
-| Domain portals | zzg236.com, taochart.com |
-| Tests | Present |
-| CI workflow | Present |
-| Dataset governance | Present |
-| Model governance | Present |
+| Engineering | `src/`, `tests/`, `pyproject.toml`, `.github/workflows/ci.yml` |
+| Documentation | `docs/architecture.md`, `docs/roadmap.md`, `docs/governance.md` |
+| Search | `docs/github-search.md`, `docs/seo-keywords.md`, `docs/traffic-page-matrix.md` |
+| Resource portals | `docs/recommended-websites.md` |
+| Community | `LICENSE`, `CONTRIBUTING.md`, `CODE_OF_CONDUCT.md`, `SECURITY.md` |
